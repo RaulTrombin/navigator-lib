@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import navigator
+import br_navigator as navigator
 
 
 def navigator_check():

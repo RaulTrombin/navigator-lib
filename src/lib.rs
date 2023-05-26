@@ -46,7 +46,7 @@ impl From<navigator_rs::ADCData> for ADCData {
 }
 
 export_cpy!(
-    navigator {
+    br_navigator {
         struct AxisData {
             x: f32,
             y: f32,
