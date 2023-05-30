@@ -6,6 +6,7 @@ use cpy_binder::export_cpy;
 struct NavigationManager {
     navigator: navigator_rs::Navigator,
 }
+
 impl NavigationManager {
     // private constructor to prevent direct instantiation
     fn new() -> NavigationManager {
@@ -46,7 +47,7 @@ impl From<navigator_rs::ADCData> for ADCData {
 }
 
 export_cpy!(
-    navigator {
+    mod navigator {
         struct AxisData {
             x: f32,
             y: f32,
@@ -54,7 +55,7 @@ export_cpy!(
         }
 
         struct ADCData {
-            channel: [i16;4],
+            channel: [i16; 4],
         }
 
         fn init() -> () {
