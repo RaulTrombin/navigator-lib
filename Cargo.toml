@@ -8,7 +8,7 @@ build = "src/build.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-cpy-binder = { version = "0.1.0" }
+cpy-binder = {git = "https://github.com/RaulTrombin/cpy-rs", branch = "cpy-rs-updated"}
 libc = "0.2"
 pyo3 = { version = "0.18", features = ["extension-module", "abi3-py39"], optional = true }
 navigator-rs = { git = "https://github.com/bluerobotics/navigator-rs" }
