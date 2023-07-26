@@ -1,0 +1,4 @@
+maturin
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-napoleon
