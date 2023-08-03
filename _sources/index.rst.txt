@@ -41,6 +41,6 @@ For more information, including installation instructions, schematics, and hardw
 .. _BlueOS: https://docs.bluerobotics.com/ardusub-zola/software/onboard/BlueOS-1.1/
 .. _guide: https://bluerobotics.com/learn/navigator-hardware-setup/#introduction
 
-.. automodule:: br_navigator
+.. automodule:: bluerobotics_navigator
    :members:
    :undoc-members:
