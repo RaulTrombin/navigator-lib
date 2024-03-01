@@ -168,7 +168,7 @@ jobs:
           apk add py3-pip
           pip3 install -U pip
         run: |
-          pip3 install bluerobotics_navigator --no-index --find-links dist/ --force-reinstall
+          pip3 install bluerobotics_navigator --no-index --find-links dist/ --force-reinstall --break-system-packages
     - name: Upload wheels
       uses: actions/upload-artifact@v3
       with:
