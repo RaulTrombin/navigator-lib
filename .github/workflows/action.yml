@@ -157,7 +157,7 @@ jobs:
           pip3 install -U pip
         run: |
           pip3 install bluerobotics_navigator --no-index --find-links dist/ --force-reinstall
-    - uses: uraimo/run-on-arch-action@v2.6.0
+    - uses: raultrombin/run-on-arch-action@master
       if: matrix.libc == 'musllinux_1_1'
       name: Install built wheel musl
       with:
