@@ -94,12 +94,13 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#bluerobotics_navigator.get_led"><code class="docutils literal notranslate"><span class="pre">get_led()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.get_pwm_enable"><code class="docutils literal notranslate"><span class="pre">get_pwm_enable()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
-<li><a class="reference internal" href="#bluerobotics_navigator.pwm_enable"><code class="docutils literal notranslate"><span class="pre">pwm_enable()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_accel"><code class="docutils literal notranslate"><span class="pre">read_accel()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_adc"><code class="docutils literal notranslate"><span class="pre">read_adc()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_adc_all"><code class="docutils literal notranslate"><span class="pre">read_adc_all()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_gyro"><code class="docutils literal notranslate"><span class="pre">read_gyro()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.read_leak"><code class="docutils literal notranslate"><span class="pre">read_leak()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_mag"><code class="docutils literal notranslate"><span class="pre">read_mag()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_pressure"><code class="docutils literal notranslate"><span class="pre">read_pressure()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.read_temp"><code class="docutils literal notranslate"><span class="pre">read_temp()</span></code></a></li>
@@ -108,9 +109,13 @@
 <li><a class="reference internal" href="#bluerobotics_navigator.set_led_all"><code class="docutils literal notranslate"><span class="pre">set_led_all()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_led_toggle"><code class="docutils literal notranslate"><span class="pre">set_led_toggle()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_neopixel"><code class="docutils literal notranslate"><span class="pre">set_neopixel()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle"><code class="docutils literal notranslate"><span class="pre">set_pwm_channel_duty_cycle()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value"><code class="docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channels_duty_cycle"><code class="docutils literal notranslate"><span class="pre">set_pwm_channels_duty_cycle()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channels_duty_cycle_values"><code class="docutils literal notranslate"><span class="pre">set_pwm_channels_duty_cycle_values()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channels_value"><code class="docutils literal notranslate"><span class="pre">set_pwm_channels_value()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_channels_values"><code class="docutils literal notranslate"><span class="pre">set_pwm_channels_values()</span></code></a></li>
+<li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_enable"><code class="docutils literal notranslate"><span class="pre">set_pwm_enable()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_freq_hz"><code class="docutils literal notranslate"><span class="pre">set_pwm_freq_hz()</span></code></a></li>
 <li><a class="reference internal" href="#bluerobotics_navigator.set_pwm_freq_prescale"><code class="docutils literal notranslate"><span class="pre">set_pwm_freq_prescale()</span></code></a></li>
 </ul>
@@ -361,6 +366,25 @@ However, despite using the embedded-hal concept, new ports can be added as long 
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.get_pwm_enable">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">get_pwm_enable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.get_pwm_enable" title="Link to this definition"></a></dt>
+<dd><p>Get the PWM chip (PCA9685)’s OE_pin state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> -&gt; ON, <cite>False</cite> -&gt; OFF.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Please check <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value" title="bluerobotics_navigator.set_pwm_channel_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">get_pwm_enable</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="bluerobotics_navigator.init">
 <span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.init" title="Link to this definition"></a></dt>
 <dd><p>Initializes the Navigator module with default settings.</p>
@@ -369,22 +393,6 @@ However, despite using the embedded-hal concept, new ports can be added as long 
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="bluerobotics_navigator.pwm_enable">
-<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">pwm_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.pwm_enable" title="Link to this definition"></a></dt>
-<dd><p>Enables or disables the PWM chip (PCA9685), using the firmware and OE_pin.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>state</strong> (<em>bool</em>) – The desired PWM chip state. <cite>True</cite> -&gt; ON, <cite>False</cite> -&gt; OFF.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>Please check <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value" title="bluerobotics_navigator.set_pwm_channel_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -488,6 +496,27 @@ However, despite using the embedded-hal concept, new ports can be added as long 
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">yaw_rate</span> <span class="o">=</span> <span class="n">angular_velocity</span><span class="o">.</span><span class="n">z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.read_leak">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">read_leak</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.read_leak" title="Link to this definition"></a></dt>
+<dd><p>Reads the state of leak detector pin from Navigator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current state. <cite>True</cite> -&gt; Leak detection, <cite>False</cite> -&gt; No leak.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bluerobotics_navigator</span> <span class="k">as</span> <span class="nn">navigator</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">leak_detector</span> <span class="o">=</span> <span class="n">navigator</span><span class="o">.</span><span class="n">read_leak</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -660,6 +689,44 @@ However, despite using the embedded-hal concept, new ports can be added as long 
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_channel_duty_cycle">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_channel_duty_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty_cycle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle" title="Link to this definition"></a></dt>
+<dd><p>Sets the duty cycle (the proportion of ON time) for the selected PWM channel.</p>
+<p>Similar to <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value" title="bluerobotics_navigator.set_pwm_channel_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a>, this function calculate the OFF counter
+value to match desired PWM channel’s duty_cyle.</p>
+<p class="rubric">Notes</p>
+<p>A duty cycle of 1.0 or 0.0 acts like a relay.</p>
+<p>Details of counters on IC, check <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value" title="bluerobotics_navigator.set_pwm_channel_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel</strong> (<a class="reference internal" href="#bluerobotics_navigator.PwmChannel" title="bluerobotics_navigator.PwmChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PwmChannel</span></code></a>) – The channel to be selected for PWM.</p></li>
+<li><p><strong>duty_cycle</strong> (<em>f32</em>) – Duty cycle count value (0.0 : 1.0).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bluerobotics_navigator</span> <span class="k">as</span> <span class="nn">navigator</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bluerobotics_navigator</span> <span class="kn">import</span> <span class="n">PwmChannel</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_freq_hz</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channel_duty_cycle</span><span class="p">(</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_channel_value">
 <span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_channel_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_channel_value" title="Link to this definition"></a></dt>
 <dd><p>Sets the duty cycle (the proportion of ON time) for the selected PWM channel.</p>
@@ -698,7 +765,46 @@ Similarly, 1900 µs pulses would be achieved with a count of 389.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channel_value</span><span class="p">(</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_channels_duty_cycle">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_channels_duty_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty_cycle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_channels_duty_cycle" title="Link to this definition"></a></dt>
+<dd><p>Like <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle" title="bluerobotics_navigator.set_pwm_channel_duty_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_duty_cycle()</span></code></a>. This function sets the duty cycle for a list of multiple PWM channels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channels</strong> ([<a class="reference internal" href="#bluerobotics_navigator.PwmChannel" title="bluerobotics_navigator.PwmChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PwmChannel</span></code></a>]) – A list of PWM channels to configure.</p></li>
+<li><p><strong>duty_cycle</strong> (<em>f32</em>) – Duty cycle count value (0.0 : 1.0).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>You can use this method like <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle" title="bluerobotics_navigator.set_pwm_channel_duty_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_duty_cycle()</span></code></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channels_value</span><span class="p">([</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch16</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_channels_duty_cycle_values">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_channels_duty_cycle_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty_cycle_values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_channels_duty_cycle_values" title="Link to this definition"></a></dt>
+<dd><p>Like <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle" title="bluerobotics_navigator.set_pwm_channel_duty_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_duty_cycle()</span></code></a>. This function sets the duty cycle for a list of
+multiple channels with multiple values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channels</strong> ([<a class="reference internal" href="#bluerobotics_navigator.PwmChannel" title="bluerobotics_navigator.PwmChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PwmChannel</span></code></a>]) – A list of PWM channels to configure.</p></li>
+<li><p><strong>duty_cycle_values</strong> (<em>f32</em>) – Duty cycle count value (0.0 : 1.0).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>You can use this method like <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_duty_cycle" title="bluerobotics_navigator.set_pwm_channel_duty_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_duty_cycle()</span></code></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channels_duty_cycle_values</span><span class="p">([</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -743,6 +849,22 @@ multiple channels with multiple values.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_enable">
+<span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_enable" title="Link to this definition"></a></dt>
+<dd><p>Enables or disables the PWM chip (PCA9685), using the firmware and OE_pin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>bool</em>) – The desired PWM chip state. <cite>True</cite> -&gt; ON, <cite>False</cite> -&gt; OFF.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Please check <a class="reference internal" href="#bluerobotics_navigator.set_pwm_channel_value" title="bluerobotics_navigator.set_pwm_channel_value"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_pwm_channel_value()</span></code></a></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="bluerobotics_navigator.set_pwm_freq_hz">
 <span class="sig-prename descclassname"><span class="pre">bluerobotics_navigator.</span></span><span class="sig-name descname"><span class="pre">set_pwm_freq_hz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluerobotics_navigator.set_pwm_freq_hz" title="Link to this definition"></a></dt>
 <dd><p>Sets the PWM frequency of the PCA9685 chip. All channels use the same frequency.</p>
@@ -767,7 +889,7 @@ framerate (e.g. a 30fps camera stream should have LEDs at 30/60/90/120/… Hz).<
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channel_value</span><span class="p">(</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -805,7 +927,7 @@ after setting the prescalar value.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_channel_value</span><span class="p">(</span><span class="n">PwmChannel</span><span class="o">.</span><span class="n">Ch1</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">navigator</span><span class="o">.</span><span class="n">set_pwm_enable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
